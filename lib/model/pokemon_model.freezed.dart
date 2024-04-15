@@ -664,9 +664,9 @@ Ability _$AbilityFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Ability {
-  Species get ability => throw _privateConstructorUsedError;
-  bool get isHidden => throw _privateConstructorUsedError;
-  int get slot => throw _privateConstructorUsedError;
+  Species? get ability => throw _privateConstructorUsedError;
+  bool? get isHidden => throw _privateConstructorUsedError;
+  int? get slot => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -678,9 +678,9 @@ abstract class $AbilityCopyWith<$Res> {
   factory $AbilityCopyWith(Ability value, $Res Function(Ability) then) =
       _$AbilityCopyWithImpl<$Res, Ability>;
   @useResult
-  $Res call({Species ability, bool isHidden, int slot});
+  $Res call({Species? ability, bool? isHidden, int? slot});
 
-  $SpeciesCopyWith<$Res> get ability;
+  $SpeciesCopyWith<$Res>? get ability;
 }
 
 /// @nodoc
@@ -696,30 +696,34 @@ class _$AbilityCopyWithImpl<$Res, $Val extends Ability>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? ability = null,
-    Object? isHidden = null,
-    Object? slot = null,
+    Object? ability = freezed,
+    Object? isHidden = freezed,
+    Object? slot = freezed,
   }) {
     return _then(_value.copyWith(
-      ability: null == ability
+      ability: freezed == ability
           ? _value.ability
           : ability // ignore: cast_nullable_to_non_nullable
-              as Species,
-      isHidden: null == isHidden
+              as Species?,
+      isHidden: freezed == isHidden
           ? _value.isHidden
           : isHidden // ignore: cast_nullable_to_non_nullable
-              as bool,
-      slot: null == slot
+              as bool?,
+      slot: freezed == slot
           ? _value.slot
           : slot // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $SpeciesCopyWith<$Res> get ability {
-    return $SpeciesCopyWith<$Res>(_value.ability, (value) {
+  $SpeciesCopyWith<$Res>? get ability {
+    if (_value.ability == null) {
+      return null;
+    }
+
+    return $SpeciesCopyWith<$Res>(_value.ability!, (value) {
       return _then(_value.copyWith(ability: value) as $Val);
     });
   }
@@ -732,10 +736,10 @@ abstract class _$$AbilityImplCopyWith<$Res> implements $AbilityCopyWith<$Res> {
       __$$AbilityImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Species ability, bool isHidden, int slot});
+  $Res call({Species? ability, bool? isHidden, int? slot});
 
   @override
-  $SpeciesCopyWith<$Res> get ability;
+  $SpeciesCopyWith<$Res>? get ability;
 }
 
 /// @nodoc
@@ -749,23 +753,23 @@ class __$$AbilityImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? ability = null,
-    Object? isHidden = null,
-    Object? slot = null,
+    Object? ability = freezed,
+    Object? isHidden = freezed,
+    Object? slot = freezed,
   }) {
     return _then(_$AbilityImpl(
-      ability: null == ability
+      ability: freezed == ability
           ? _value.ability
           : ability // ignore: cast_nullable_to_non_nullable
-              as Species,
-      isHidden: null == isHidden
+              as Species?,
+      isHidden: freezed == isHidden
           ? _value.isHidden
           : isHidden // ignore: cast_nullable_to_non_nullable
-              as bool,
-      slot: null == slot
+              as bool?,
+      slot: freezed == slot
           ? _value.slot
           : slot // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ));
   }
 }
@@ -780,11 +784,11 @@ class _$AbilityImpl implements _Ability {
       _$$AbilityImplFromJson(json);
 
   @override
-  final Species ability;
+  final Species? ability;
   @override
-  final bool isHidden;
+  final bool? isHidden;
   @override
-  final int slot;
+  final int? slot;
 
   @override
   String toString() {
@@ -822,18 +826,18 @@ class _$AbilityImpl implements _Ability {
 
 abstract class _Ability implements Ability {
   const factory _Ability(
-      {required final Species ability,
-      required final bool isHidden,
-      required final int slot}) = _$AbilityImpl;
+      {required final Species? ability,
+      required final bool? isHidden,
+      required final int? slot}) = _$AbilityImpl;
 
   factory _Ability.fromJson(Map<String, dynamic> json) = _$AbilityImpl.fromJson;
 
   @override
-  Species get ability;
+  Species? get ability;
   @override
-  bool get isHidden;
+  bool? get isHidden;
   @override
-  int get slot;
+  int? get slot;
   @override
   @JsonKey(ignore: true)
   _$$AbilityImplCopyWith<_$AbilityImpl> get copyWith =>

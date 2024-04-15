@@ -6,12 +6,16 @@ import 'package:pokemon_api/utils/api_utils.dart';
 
 class ApiService {
   final Dio dio = Dio();
-  Future<List<Pokemon>?> getData() async {
+  Future<List<Ability>?> getData() async {
     try {
       var response = await dio.get(ApiUtils.baseUrl);
       if (response.statusCode == 200) {
-        List<Pokemon> model = response.data;
-        return model;
+        final data = response.data;
+        final datas = <Ability>[];
+        for (var d in data['abilities']) {
+          datas.add(Ability.fromJson(d));
+        }
+        return datas;
       } else {
         return null;
       }
